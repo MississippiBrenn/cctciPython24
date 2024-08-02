@@ -9,5 +9,11 @@ class TestChapter1(unittest.TestCase):
         self.assertEqual(self.chapter1.reverseString('hello'), 'olleh')
         self.assertEqual(self.chapter1.reverseString('ho'), 'oh')
         self.assertEqual(self.chapter1.reverseString(''), '')
+    
+
+    def test_is_unique(self):
+        self.assertEqual(self.chapter1.isUnique('aaaa'), False)
+        self.assertEqual(self.chapter1.isUnique('abcd'),True)
+        
         if __name__ == '__main__': 
             unittest.main()
