@@ -9,5 +9,5 @@ class TestChapter1(unittest.TestCase):
         self.assertEqual(self.chapter1.reverseString('hello'), 'olleh')
         self.assertEqual(self.chapter1.reverseString('ho'), 'oh')
         self.assertEqual(self.chapter1.reverseString(''), '')
-        if __name__ = '__main__': 
+        if __name__ == '__main__': 
             unittest.main()
