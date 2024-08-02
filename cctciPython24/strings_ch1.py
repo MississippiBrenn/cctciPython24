@@ -1,16 +1,37 @@
 class Chapter1 :
+    # # is the word the same back and forth 
+    def palindromePermuation(self, string): 
+        odds = set()
+        string = string.replace(" ", "").lower()
+        for letter in string: 
+            if letter in odds: 
+                odds.remove(letter)
+            else: 
+                odds.add(letter)
+        return len(odds) <= 1
+
+    # # replace all spaces in string with %20
+    def URLify(self, string):
+        return string.replace(' ', '%20')
+
+    # # Given two strings write a method to decide if one is a permutation of another 
+    def checkPermutations(self, string1, string2):
+        same_letter_count = 0; 
+        if len(string1) != len(string2):
+            return False
+        return sorted(string1) == sorted(string2)
+        
+
     # # Determine if a string has all unique characters 
     def isUnique(self, string):
-        list_string = list(string)
-        sorted_lstring = sorted(list_string)
-        j = 0
-        for i in range(1,len(sorted_lstring)-1):
-            if(sorted_lstring[j]==sorted_lstring[i]):
+        seen_chars = set() 
+
+        for letter in string: 
+            if letter in seen_chars: 
                 return False
-        
+            seen_chars.add(letter)
+
         return True
-
-
 
     def reverseString(self, string):
         new_string = list(string)
