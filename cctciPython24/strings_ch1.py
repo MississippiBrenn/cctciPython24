@@ -1,25 +1,44 @@
-class Chapter1 :
+class Chapter1:
    # #  given n x n matrix, rotate image by 90 degress
-   def rotate90(self, matrix)
+    def rotate90(self, matrix):
         return [list(reversed(col)) for col in zip(*matrix)]
+   
     # #  compress string to letter and letter count 
     def stringCompression(self, string):
+        if not string: 
+            return ''
+        
+        if len(string) == 1:
+            return string
+        
         prev = string[0]
-        count = 1
-        new_string = ""
-        for i in range(1, len(string)): 
-            letter = string[i]
-            if letter == prev: 
+        count =1 
+        new_string = []
+        
+        for i in range(1, len(string)):
+            if string[i] == prev: 
                 count +=1
             else: 
-                new_string +=prev+str(count)
-                
-                count = 1
-            prev = letter 
+                new_string.append(prev)
+                if count > 1:   
+                    print(count)      
+                    new_string.append(str(count))
+                prev = string[i]
+                count =1
+        
+        if count > 1: 
+            new_string.append(prev)
+            new_string.append(str(count))
+        else: 
+            new_string.append(prev)
+        
+        return ''.join(new_string)
+                   
 
-        new_string += prev + str(count)
+      
 
-        return new_string
+           
+     
 
     # # words are one edit away from each other 
     def oneAway(self, string1, string2): 

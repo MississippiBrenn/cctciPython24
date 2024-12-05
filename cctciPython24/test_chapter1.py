@@ -20,8 +20,8 @@ class TestChapter1(unittest.TestCase):
         self.assertEqual(rotate90(matrix), expected)
 
     def test_string_compression(self):
-        self.assertEqual(self.chapter1.stringCompression('mmmkkl'), 'm3k2l1')
-        self.assertEqual(self.chapter1.stringCompression('a'), 'a1')
+        self.assertEqual(self.chapter1.stringCompression('mmmkkl'), 'm3k2l')
+        self.assertEqual(self.chapter1.stringCompression('a'), 'a')
         self.assertEqual(self.chapter1.stringCompression(''), '')
 
 
